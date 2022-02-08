@@ -62,24 +62,10 @@
   </Disclosure>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
+import { ref } from 'vue';
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue';
 import { MenuIcon, XIcon } from '@heroicons/vue/outline';
 
-const navigation = [{ name: 'Dashboard', href: '#', current: true }];
-
-export default {
-  components: {
-    Disclosure,
-    DisclosureButton,
-    DisclosurePanel,
-    MenuIcon,
-    XIcon,
-  },
-  setup() {
-    return {
-      navigation,
-    };
-  },
-};
+const navigation = ref([{ name: 'Dashboard', href: '#', current: true }]);
 </script>
