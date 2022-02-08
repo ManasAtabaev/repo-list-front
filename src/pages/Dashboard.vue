@@ -1,7 +1,7 @@
 <template>
   <main>
     <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-      <ReposSearch @search="handleSearch" :q="repositories.params.q" />
+      <BaseSearch @search="handleSearch" :q="repositories.params.q" />
 
       <div class="mb-4 text-center text-red-900" v-if="repositories.isError">
         Something went wrong ...
@@ -26,9 +26,9 @@
 </template>
 
 <script lang="ts" setup>
+import BaseSearch from '@/components/BaseSearch';
 import Loader from '@/components/Loader';
 import ReposList from '@/components/ReposList';
-import ReposSearch from '@/components/ReposSearch';
 import { useRepositoriesStore } from '@/stores';
 
 const repositories = useRepositoriesStore();
