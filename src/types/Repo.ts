@@ -1,12 +1,12 @@
 export interface Repo {
-  id: Number;
-  node_id: String;
-  name: String;
-  full_name: String;
-  description: String;
+  id: number;
+  node_id: string;
+  name: string;
+  full_name: string;
+  description: string;
   owner: {
-    login: String;
-    id: Number;
+    login: string;
+    id: number;
   };
-  size: Number;
+  size: number;
 }
