@@ -19,7 +19,7 @@ export const useRepositoriesStore = defineStore('repositories', () => {
   });
   const isLastPage = computed(() => params.page >= maxPage.value);
 
-  async function retrieveRepos(refresh: boolean) {
+  async function fetchData(refresh: boolean) {
     isLoading.value = true;
     if (refresh) {
       reset();
@@ -55,7 +55,7 @@ export const useRepositoriesStore = defineStore('repositories', () => {
   function loadMore() {
     if (!isLastPage.value) {
       params.page++;
-      retrieveRepos(false);
+      fetchData(false);
     }
   }
 
@@ -64,7 +64,7 @@ export const useRepositoriesStore = defineStore('repositories', () => {
     total_count,
     isLoading,
     params,
-    retrieveRepos,
+    fetchData,
     loadMore,
     isLastPage,
   };

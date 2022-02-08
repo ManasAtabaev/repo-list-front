@@ -32,11 +32,11 @@ import ReposList from '@/components/ReposList';
 import { useRepositoriesStore } from '@/stores';
 
 const repositories = useRepositoriesStore();
-repositories.retrieveRepos(true);
+repositories.fetchData(true);
 
 function handleSearch(q: string) {
   repositories.params.q = q;
-  repositories.retrieveRepos(true);
+  repositories.fetchData(true);
 }
 
 function handleLoadMore() {
