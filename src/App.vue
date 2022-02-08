@@ -10,21 +10,7 @@
   </div>
 </template>
 
-<script lang="ts">
-import { Options, Vue } from 'vue-class-component';
+<script lang="ts" setup>
 import MainMenu from './components/MainMenu.vue';
 import ReposList from './components/ReposList.vue';
-
-@Options({
-  components: {
-    MainMenu,
-    ReposList,
-  },
-})
-export default class App extends Vue {}
 </script>
-
-<style>
-#app {
-}
-</style>
