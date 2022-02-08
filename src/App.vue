@@ -6,11 +6,12 @@
         <h1 class="text-3xl font-bold text-gray-900">Dashboard</h1>
       </div>
     </header>
-    <ReposList />
+
+    <Dashboard />
   </div>
 </template>
 
 <script lang="ts" setup>
 import MainMenu from './components/MainMenu.vue';
-import ReposList from './components/ReposList.vue';
+import Dashboard from './pages/Dashboard.vue';
 </script>
