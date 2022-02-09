@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia';
 import { ref } from 'vue';
 import { Repo } from '@/types';
-import { FavoriteDataService } from '@/services';
+import { favoriteDataService } from '@/services';
 
 export const useFavoritesStore = defineStore('favorites', () => {
   const data = ref<number[]>([]);
@@ -11,7 +11,7 @@ export const useFavoritesStore = defineStore('favorites', () => {
   async function fetchData() {
     isLoading.value = true;
     try {
-      const response = await FavoriteDataService.get();
+      const response = await favoriteDataService.get();
       data.value = response.data;
     } catch (e) {
       console.error(e);
@@ -24,7 +24,7 @@ export const useFavoritesStore = defineStore('favorites', () => {
   async function add(payload: Repo) {
     isLoading.value = true;
     try {
-      const response = await FavoriteDataService.create(payload);
+      const response = await favoriteDataService.create(payload);
       console.log(response.data);
       data.value.push(payload.id);
     } catch (e) {

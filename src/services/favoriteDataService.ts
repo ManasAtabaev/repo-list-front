@@ -1,7 +1,7 @@
 import http from '@/api/http-backend';
 import { Repo } from '@/types';
 
-export const FavoriteDataService = {
+export const favoriteDataService = {
   get,
   create,
 };

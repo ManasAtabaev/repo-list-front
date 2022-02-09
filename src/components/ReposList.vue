@@ -69,7 +69,7 @@
                 </td>
                 <td class="px-6 py-4 whitespace-nowrap text-center">
                   <div class="text-sm text-gray-900">
-                    {{ EstimatedDownloadTimeHelper.get(item.time) }}
+                    {{ estimatedDownloadTimeHelper.get(item.time) }}
                   </div>
                 </td>
                 <td class="px-6 py-4 whitespace-nowrap">
@@ -100,13 +100,12 @@ import { HeartIcon } from '@heroicons/vue/outline';
 import { HeartIcon as SolidHeartIcon } from '@heroicons/vue/solid';
 import { useFavoritesStore } from '@/stores';
 import { Repo } from '@/types';
-import { EstimatedDownloadTimeHelper } from '@/helpers/EstimatedDownloadTimeHelper';
+import { estimatedDownloadTimeHelper } from '@/helpers/estimatedDownloadTimeHelper';
 
 interface Props {
   data: Repo[];
 }
 
-const estimatedDownloadTimeHelper = EstimatedDownloadTimeHelper;
 const props = defineProps<Props>();
 const favorites = useFavoritesStore();
 favorites.fetchData();

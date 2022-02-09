@@ -6,6 +6,6 @@ const get = (size: number) => {
   return 2;
 };
 
-export const EstimatedDownloadTimeHelper = {
+export const estimatedDownloadTimeHelper = {
   get,
 };

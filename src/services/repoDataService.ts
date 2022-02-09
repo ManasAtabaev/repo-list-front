@@ -1,7 +1,7 @@
 import http from '@/api/http-github';
 import { ResponseData, Params } from '@/types';
 
-export const RepoDataService = {
+export const repoDataService = {
   getAll,
 };
 

@@ -1,2 +1,2 @@
-export * from './RepoDataService';
-export * from './FavoriteDataService';
+export * from './repoDataService';
+export * from './favoriteDataService';

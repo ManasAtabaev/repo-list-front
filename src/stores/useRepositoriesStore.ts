@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia';
 import { ref, reactive, computed } from 'vue';
 import { ResponseData, Repo, Params } from '@/types';
-import { RepoDataService } from '@/services';
+import { repoDataService } from '@/services';
 
 export const useRepositoriesStore = defineStore('repositories', () => {
   const data = ref<Repo[]>([]);
@@ -25,7 +25,7 @@ export const useRepositoriesStore = defineStore('repositories', () => {
     }
     try {
       if (params.q) {
-        const response = await RepoDataService.getAll(params);
+        const response = await repoDataService.getAll(params);
         setData(response.data);
       }
     } catch (e) {
