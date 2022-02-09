@@ -1,7 +1,11 @@
 <template>
   <main>
     <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-      <BaseSearch @search="handleSearch" :q="repositories.params.q" />
+      <div class="flex justify-center">
+        <div class="mb-3 xl:w-96">
+          <BaseSearch @search="handleSearch" :q="repositories.params.q" />
+        </div>
+      </div>
 
       <div class="mb-4 text-center text-red-900" v-if="repositories.isError">
         Something went wrong ...
