@@ -4,12 +4,12 @@ New VueJS 3.0 project was setup with vue-cli because it was recommended from vue
 
 ## Project setup
 
-- Run backend API (https://github.com/ManasAtabaev/repo-list-back)
-- Update `.env` file with you backend API url `VUE_APP_BACKEND_API`
-
 ```
 npm install
 ```
+
+- Run backend API (https://github.com/ManasAtabaev/repo-list-back)
+- Update `.env` file with you backend API url `VUE_APP_BACKEND_API`
 
 ### Compiles and hot-reloads for development
 
