@@ -11,5 +11,4 @@ export interface Repo {
     html_url: string;
   };
   size: number;
-  estDownloadTime(): number;
 }

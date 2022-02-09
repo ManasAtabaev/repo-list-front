@@ -1,11 +1,10 @@
 import { defineStore } from 'pinia';
 import { ref, reactive, computed } from 'vue';
-import { ResponseData, Params } from '@/types';
-import { Repository } from '@/models';
+import { ResponseData, Repo, Params } from '@/types';
 import { RepoDataService } from '@/services';
 
 export const useRepositoriesStore = defineStore('repositories', () => {
-  const data = ref<Repository[]>([]);
+  const data = ref<Repo[]>([]);
   const total_count = ref(0);
   const isLoading = ref(false);
   const isError = ref(false);
@@ -45,10 +44,10 @@ export const useRepositoriesStore = defineStore('repositories', () => {
   }
 
   function setData(response: ResponseData) {
-    for (const item of response.items) {
-      data.value.push(new Repository(item));
-    }
-    // data.value = data.value.concat(response.data.items);
+    // for (const item of response.items) {
+    //   data.value.push(new Repository(item));
+    // }
+    data.value = data.value.concat(response.items);
     total_count.value = response.total_count;
   }
 
