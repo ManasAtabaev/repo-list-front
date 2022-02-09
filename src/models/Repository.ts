@@ -21,7 +21,11 @@ export class Repository implements Repo {
     this.full_name = data.full_name;
     this.html_url = data.html_url;
     this.description = data.description;
-    this.owner = data.owner;
+    this.owner = {
+      login: data.owner.login,
+      id: data.owner.id,
+      html_url: data.owner.html_url,
+    };
     this.size = data.size;
   }
 

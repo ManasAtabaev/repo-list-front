@@ -75,7 +75,13 @@
                 <td class="px-6 py-4 whitespace-nowrap">
                   <div class="text-sm text-gray-900">
                     <HeartIcon
+                      v-if="!favorites.data.includes(item.id)"
+                      @click="handleFavorite(item)"
                       class="h-5 w-5 text-grey-500 hover:text-red-500 cursor-pointer inline-block"
+                    />
+                    <SolidHeartIcon
+                      v-if="favorites.data.includes(item.id)"
+                      class="h-5 w-5 text-red-500 inline-block"
                     />
                   </div>
                 </td>
@@ -92,6 +98,7 @@
 import { defineProps } from 'vue';
 import { HeartIcon } from '@heroicons/vue/outline';
 import { HeartIcon as SolidHeartIcon } from '@heroicons/vue/solid';
+import { useFavoritesStore } from '@/stores';
 import { Repo } from '@/types';
 
 interface Props {
@@ -99,4 +106,10 @@ interface Props {
 }
 
 const props = defineProps<Props>();
+const favorites = useFavoritesStore();
+favorites.fetchData();
+
+function handleFavorite(payload: Repo) {
+  favorites.add(payload);
+}
 </script>
