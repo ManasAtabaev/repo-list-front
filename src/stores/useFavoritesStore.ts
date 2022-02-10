@@ -12,7 +12,9 @@ export const useFavoritesStore = defineStore('favorites', () => {
     isLoading.value = true;
     try {
       const response = await favoriteDataService.get();
-      data.value = response.data;
+      if (response.data.success) {
+        data.value = response.data.result;
+      }
     } catch (e) {
       console.error(e);
       isError.value = true;
@@ -25,7 +27,6 @@ export const useFavoritesStore = defineStore('favorites', () => {
     isLoading.value = true;
     try {
       const response = await favoriteDataService.create(payload);
-      console.log(response.data);
       data.value.push(payload.id);
     } catch (e) {
       console.error(e);
